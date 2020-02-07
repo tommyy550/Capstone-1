@@ -1,0 +1,51 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="CIS4296_HW3.MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script> 
+$(document).ready(function(){
+  $("#flip").click(function(){
+    $("#panel").slideDown("slow");
+  });
+});
+    </script>
+    <style>
+        #panel, #flip {
+            padding: 5px;
+            text-align: center;
+            background-color: #00F2FF;
+            border: solid 1px #c3c3c3;
+        }
+
+        #panel {
+            padding: 50px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <h1>Tommy's Website
+            </h1>
+            <%--<asp:Menu ID="menu1" runat="server" style="margin:0 auto 0 auto;" Orientation="Horizontal" StaticHoverStyle-BorderStyle="Dotted" StaticHoverStyle-BorderColor="Gold" BackColor="WhiteSmoke" ForeColor="Red"><Items>  <asp:MenuItem Text="HOME" NavigateUrl="WebForm1.aspx" Target="_self"></asp:MenuItem> <asp:MenuItem Text="ABOUT" NavigateUrl="About.aspx" Target="_self"></asp:MenuItem>  </Items>
+</asp:Menu>--%>
+            <asp:Menu ID="menu1" runat="server" Style="margin: 0 auto 0 auto;" Orientation="Horizontal" StaticHoverStyle-BorderStyle="Dotted" StaticHoverStyle-BorderColor="Gold" BackColor="WhiteSmoke" ForeColor="Red">
+                <Items>
+                    <asp:MenuItem Text="HOME" NavigateUrl="WebForm1.aspx" Target="_self"></asp:MenuItem>
+                    <asp:MenuItem Text="ABOUT" NavigateUrl="About.aspx" Target="_self"></asp:MenuItem>
+                </Items>
+            </asp:Menu>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
